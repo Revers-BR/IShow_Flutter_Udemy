@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:ishow_flutter_udemy/botao_customizado.dart';
+import 'package:ishow_flutter_udemy/input_customizado.dart';
 
 class Login extends StatefulWidget {
   
@@ -51,22 +53,25 @@ class _Login extends State<Login> {
                       borderRadius: BorderRadius.circular(8),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.grey!,
+                          color: Colors.grey[200]!,
                           blurRadius: 15,
                           spreadRadius: 4
                         )
                       ]
                     ),
                     child: Column(children: [
-                      TextField(
-                        decoration: InputDecoration(
-                          hintText: "Email"
-                        ),
-                      )
-                    ],),
+                      InputCustomizado(
+                        hintText: "Email",
+                      ),
+                      InputCustomizado(
+                        hintText: "Senha",
+                        obscureText: true,
+                        icon: const Icon(Icons.lock),
+                      ),
+                    ]),
                   ),
                   SizedBox(height: 20),
-                  //InkWell(),
+                  BotaoCustomizado(),
                   SizedBox(height: 20),
                   Text("Esqueci minha senha!", style: TextStyle(
                     color: Color.fromRGBO(255, 100, 127, 1),
